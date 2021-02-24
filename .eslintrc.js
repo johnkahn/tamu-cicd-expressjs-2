@@ -1,55 +1,58 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'jest'],
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint", "jest"],
   env: {
     commonjs: true,
     es6: true,
     node: true,
-    'jest/globals': true,
+    "jest/globals": true,
   },
-  extends: ['airbnb-typescript/base', 'prettier', 'prettier/@typescript-eslint'],
+  extends: ["airbnb-typescript/base", "prettier"],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
   },
   parserOptions: {
     ecmaVersion: 2018,
-    project: './tsconfig.json',
+    project: "./tsconfig.json",
   },
-  ignorePatterns: ['node_modules', '**/*.js'],
+  ignorePatterns: ["node_modules", "**/*.js"],
   rules: {
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.ts'] }],
-    'import/prefer-default-export': ['off'],
-    'object-curly-newline': ['off'],
-    '@typescript-eslint/no-use-before-define': ['off'],
-    'no-await-in-loop': ['off'],
-    'operator-linebreak': ['off'],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
+    "import/no-extraneous-dependencies": [
+      "error",
+      { devDependencies: ["**/*.test.ts"] },
+    ],
+    "import/prefer-default-export": ["off"],
+    "object-curly-newline": ["off"],
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "no-await-in-loop": ["off"],
+    "operator-linebreak": ["off"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
       {
-        js: 'never',
-        ts: 'never',
+        js: "never",
+        ts: "never",
       },
     ],
-    'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': 'error',
-    'class-methods-use-this': ['warn', { exceptMethods: ['up', 'down'] }],
-    'no-restricted-syntax': 'off',
-    'import/no-cycle': 'off',
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "class-methods-use-this": ["warn", { exceptMethods: ["up", "down"] }],
+    "no-restricted-syntax": "off",
+    "import/no-cycle": "off",
   },
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       node: {
-        extensions: ['.js', '.ts'],
+        extensions: [".js", ".ts"],
       },
     },
   },
   overrides: [
     {
-      files: ['**/*.test.ts'],
+      files: ["**/*.test.ts"],
       rules: {
-        'global-require': 'off',
+        "global-require": "off",
       },
     },
   ],

